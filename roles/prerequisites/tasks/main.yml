@@ -1,0 +1,15 @@
+---
+# tasks file for prerequisites
+- name: Update all packages
+  yum:
+    update_cache: true
+
+- name: Install wget 
+  yum: 
+    name: wget 
+    state: installed
+
+- name : Install OpenJDK 1.8
+  yum:
+    name: java-1.8.0-openjdk.x86_64
+    state: installed
