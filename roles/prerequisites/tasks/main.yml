@@ -13,3 +13,14 @@
   yum:
     name: java-1.8.0-openjdk.x86_64
     state: installed
+
+- name: Permit firewall ports
+  firewalld:
+    port: "{{ item.port }}/{{ item.protocol }}"
+    permanent: yes
+    immediate: yes
+    state: enabled
+
+  with_items:
+    - {port: "22", protocol: "tcp"}
+    - {port: "8081", protocol: "tcp"}
