@@ -1,3 +1,3 @@
 [hosts]
-nexus ansible_host=192.168.21.141 ansible_user=root
+nexus ansible_host=192.168.21.141
 

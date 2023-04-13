@@ -1,0 +1,26 @@
+---
+# tasks file for nexus
+- name: Check if app directory exists
+  stat:
+    path: "/app/"
+  register: directory_data
+
+- name: Create app directory
+  shell: 
+    cmd: mkdir "{{dir}}"
+  when: not directory_data.stat.exists
+  
+- name: Install nexus
+  shell: 
+    cmd: wget -O "{{dir}}"/nexus.tar.gz https://download.sonatype.com/nexus/3/latest-unix.tar.gz
+  when: not directory_data.stat.exists
+
+- name: Untar nexus downloaded file
+  unarchive:
+    src:  "{{dir}}/nexus.tar.gz"
+    dest: "{{dir}}/"
+    remote_src: true
+
+- name: Rename untared file
+  shell:
+    cmd: mv /app/nexus-3* /app/nexus
