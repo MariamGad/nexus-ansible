@@ -17,8 +17,8 @@ Install Latest Sonatype Nexus 3 on CentOS 9 using ansible \
     nexus ansible_host=remote_host_IP
     ```
 * Nexus node
-  * Minimum 1 VCPU & 2 GB Memory.
-  * Install OpenJDK 8.
+  * Minimum 1 VCPU & 2 GB Memory
+  * Install OpenJDK 8
   
  ---
  
@@ -29,15 +29,15 @@ Install Latest Sonatype Nexus 3 on CentOS 9 using ansible \
  * Create a directory named `app`
  * Download the latest nexus in app directory
  * Untar the downloaded file
- * Rename the untared file to `nexus`.
- * Create a service user named `nexus`.
+ * Rename the untared file to `nexus`
+ * Create a service user named `nexus`
  * Change the ownership of nexus files to `nexus` user
  * Create a nexus systemd unit file `/etc/systemd/system/nexus.service`
  * Start and enable nexus service
 
 ---
 ## Validation 
-* run ansible-playbook -i `hosts-inventory playbook.yml`
+* run `ansible-playbook -i hosts-inventory playbook.yml`
 * Visit `http://localhost:8081`
 * Log in using default username `admin ` and password found in `app/sonatype-work/nexus3/admin.password` 
 #### Now you will be able to see the nexus homepage 
