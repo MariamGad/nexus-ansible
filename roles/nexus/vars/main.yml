@@ -1,3 +1,5 @@
 ---
 # vars file for nexus
 dir: /app
+src_file: nexus.service
+dest_file: /etc/systemd/system/nexus.service
