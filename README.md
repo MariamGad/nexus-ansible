@@ -37,6 +37,7 @@ Install Latest Sonatype Nexus 3 on CentOS 9 using ansible \
 
 ---
 ## Validation 
+* run ansible-playbook -i `hosts-inventory playbook.yml`
 * Visit `http://localhost:8081`
 * Log in using default username `admin ` and password found in `app/sonatype-work/nexus3/admin.password` 
 #### Now you will be able to see the nexus homepage 
